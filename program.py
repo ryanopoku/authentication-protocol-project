@@ -11,8 +11,6 @@ import time
 def generateOTP() :
     global onetimepass
  
-    # Declare a string variable 
-    # which stores all string
     string = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@£#$%^&*()_-+=[{]}:;|'~`?!"
     OTP = ""
     length = len(string)
@@ -20,7 +18,7 @@ def generateOTP() :
         OTP += string[math.floor(random.random() * length)]
     return OTP
 
-# Driver code
+
 if __name__ == "__main__" :
      
     onetimepass=generateOTP()
@@ -34,28 +32,24 @@ def sendemail():
     global username
     global USERNAME
     global user_string
-    # connect with Google's servers
-    smtp_ssl_host = 'mail.bazoogo.com'
+    #SMTP details needed to connect to mail server
+    smtp_ssl_host = '****'
     smtp_ssl_port = 465
-# use username or email to log in
-    username1 = 'qmulproject@bazoogo.com'
-    password = 'qmulproject123'
+ #SMTP details  username and password  credentials replace *'s with appropriate credentials
+    username1 = '****'
+    password = '****'
 
-    from_addr = 'qmulproject@bazoogo.com'
+    from_addr = ****'
     to_addrs = ((USERNAME.get()))
-# the email lib has a lot of templates
-# for different message formats,
-# on our case we will use MIMEText
-# to send only text
+
     message = MIMEText("Your OTP is:\n" + str(onetimepass))
     message['subject'] = 'One Time Password for QMUL project'
     message['from'] = from_addr
     message['to'] = ', '.join(to_addrs)
 
-# we'll connect using SSL
+#connects to server using SSL
     server = smtplib.SMTP_SSL(smtp_ssl_host, smtp_ssl_port)
-# to interact with the server, first we log in
-# and then we send the message
+
     server.login(username1, password)
     server.sendmail(from_addr, to_addrs, message.as_string())
     server.quit()
