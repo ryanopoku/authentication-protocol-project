@@ -37,7 +37,7 @@ Follow the necessary steps and once email address and password entered, check yo
 Troubleshooting:
 
 How can I view the users stored in the database?
-Accounts are stored and located within a database file called ÔqmulProject_DB.dbÕ
+Accounts are stored and located within a database file called qmulProject_DB.db
 
 I am not receiving an email with the one time password?
 Emails are sent using SMTP SSL details. Please check all your email folders including your spam/junk mail, as emails from this application may end up there. Emails will be sent from the email address qmulproject@bazoogo.com.
